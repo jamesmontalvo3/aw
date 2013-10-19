@@ -9,6 +9,8 @@ CREATE TABLE shows (
 	start_date     DATE,
 	end_date       DATE,
 
+	status         VARCHAR(64), /* active, inactive */
+
 	PRIMARY KEY (`id`)
 
 ) ENGINE=INNODB;
@@ -20,6 +22,8 @@ CREATE TABLE show_sites (
 	title     VARCHAR(255),
 	lat       DECIMAL(10, 8) NOT NULL, 
 	lng       DECIMAL(11, 8) NOT NULL,
+
+	status    VARCHAR(64), /* active, inactive: to show or not to show... */
 
 	PRIMARY KEY (`id`)
 
@@ -40,6 +44,8 @@ CREATE TABLE dealers (
 	description     TEXT,
 	image           VARCHAR(255),
 	website         TEXT,
+
+	status          VARCHAR(64), /* pending, approved */
 
 	PRIMARY KEY (`id`)
 
